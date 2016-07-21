@@ -1,0 +1,61 @@
+@import "mixins";
+
+form.form-horizontal {
+
+  // It's hard to say what is the logic reason for form to be more narrow on mockup
+  > .row {
+    margin: 0 25px;
+  }
+
+  .form-group {
+
+    margin: 0 0 6px;
+
+    label {
+      font-weight: $font-weight-light;
+      font-size: 12px;
+    }
+
+    > label {
+      color: $accent-color;
+      @include opacity(0);
+      @include opacity-transition();
+
+      &.active {
+        @include opacity(1);
+      }
+    }
+
+    .form-control {
+      border-left-width: 0;
+      border-right-width: 0;
+      border-top-width: 0;
+      box-shadow: none;
+      padding: 0 0 8px;
+
+      &:focus {
+        border-color: $accent-color;
+      }
+    }
+
+    textarea.form-control {
+      line-height:25px;
+    }
+
+    .radio {
+      // this looks to be hardcoded, but we need more use cases to create
+      // smth more general
+      width: 50%;
+
+      > label {
+        font-size: 14px;
+
+        &.active {
+          color: $input-color;
+        }
+      }
+    }
+
+  }
+
+}

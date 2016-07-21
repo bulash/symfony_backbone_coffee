@@ -1,0 +1,53 @@
+@import "mixins";
+@import "bootstrap";
+
+$radio-color: #0285d1 !default;
+$icon-font-family: "Ionicons" !default;
+$radio-checked-icon: "\f3ff" !default;
+$radio-unchecked-icon: "\f401" !default;
+$radio-icon-size: 26px !default;
+
+.radio {
+
+  padding-left: $radio-icon-size;
+  display: inline-block;
+
+  input[type="radio"] {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  label{
+
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+    margin-right: $radio-icon-size;
+    text-transform: capitalize;
+
+    &::before {
+      color: $gray-light;
+      content: $radio-unchecked-icon;
+      font-family: $icon-font-family;
+      font-size: $radio-icon-size;
+      display: inline-block;
+      position: absolute;
+      width: $radio-icon-size;
+      height: $radio-icon-size;
+      left: 0;
+      margin: -10px 0 0 (-$radio-icon-size);
+      background-color: #fff;
+      @include transition(color $transition-type $transition-time);
+    }
+
+    &.active {
+      &::before {
+        content: $radio-checked-icon;
+        color: $radio-color;
+      }
+    }
+
+  }
+
+}

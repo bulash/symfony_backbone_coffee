@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -31,21 +32,81 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('userName', TextType::class, array('label' => 'User name', 'required' => true))
-            ->add('userEmail', EmailType::class, array('label' => 'Email', 'required' => true))
-            ->add('siteUrl', UrlType::class, array('label' => 'Site Url', 'required' => false))
-            ->add('userBirthday', BirthdayType::class, array('label' => 'Birthday', 'required' => false))
-            ->add('userGender', ChoiceType::class, array('choices' => array(User::GENDER_MALE, User::GENDER_FEMALE), 'label' => 'Gender', 'required' => false))
-            ->add('userPhone', TextType::class, array('label' => 'Phone number', 'required' => false))
-            ->add('userSkill', NumberType::class, array('label' => 'Skill number', 'required' => false))
-            ->add('userAbout', TextareaType::class, array('label' => 'About', 'required' => false))
+            ->add('userName', TextType::class, array(
+                'label' => 'User name',
+                'required' => true,
+                'attr' => array(
+                    'placeholder' => 'User Name'
+                )
+            ))
+            ->add('userEmail', EmailType::class, array(
+                'label' => 'Email',
+                'required' => true,
+                'attr' => array(
+                    'placeholder' => 'Email'
+                )
+            ))
+            ->add('siteUrl', UrlType::class, array(
+                'label' => 'Site Url',
+                'required' => false,
+                'attr' => array(
+                    'placeholder' => 'URL'
+                )
+            ))
+            ->add('userBirthday', BirthdayType::class, array(
+                'label' => 'Birthday',
+                'required' => false,
+                'widget' => 'single_text',
+                'attr' => array(
+                    'placeholder' => 'Birthdate'
+                )
+            ))
+            ->add('userGender', ChoiceType::class, array(
+                'choices' => array(User::GENDER_MALE, User::GENDER_FEMALE),
+                'label' => 'Gender',
+                'required' => true,
+                'expanded' => true,
+                'multiple' => false
+            ))
+            ->add('userPhone', TextType::class, array(
+                'label' => 'Phone number',
+                'required' => false,
+                'attr' => array(
+                    'placeholder' => 'Phone Number'
+                )
+            ))
+            ->add('userSkill', NumberType::class, array(
+                'label' => 'Skill number',
+                'required' => false,
+                'attr' => array(
+                    'placeholder' => 'Skill number'
+                )
+            ))
+            ->add('userAbout', TextareaType::class, array(
+                'label' => 'About',
+                'required' => false,
+                'attr' => array(
+                    'placeholder' => 'Enter a brief description of yourself and interest.',
+                    'rows' => 1
+                )
+            ))
             ->add(
                 'password',
                 RepeatedType::class,
                 array(
                     'type' => 'password',
-                    'first_options' => array('label' => 'Password'),
-                    'second_options' => array('label' => 'Repeat Password'),
+                    'first_options' => array(
+                        'label' => 'Password',
+                        'attr' => array(
+                            'placeholder' => 'Password'
+                        )
+                    ),
+                    'second_options' => array(
+                        'label' => 'Repeat Password',
+                        'attr' => array(
+                            'placeholder' => 'Repeat Password'
+                        )
+                    ),
                     'invalid_message' => 'Passwords did not match',
                     'mapped' => true,
                     'required' => false,

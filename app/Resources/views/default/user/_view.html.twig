@@ -1,0 +1,49 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xs-10">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8">
+                        <h1>Application form</h1>
+                    </div>
+                    <div class="col-lg-1 col-md-2 text-right">
+                        <div class="activity-buttons">
+                            <a data-toggle="modal" data-target="#modal" class="btn btn-default">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row page-content">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body ultra-light">
+                    <h3><%= field('userName') %></h3>
+                    <p><%= date('userBirthday') %></p>
+                    <p><%= field('userEmail') %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 text-md-right">
+                            <p><%= field('siteUrl') %></p>
+                            <p><%= field('userPhone') %></p>
+                            <p><%= field('userSkill') %></p>
+                            <p><%= gender('userGender') %></p>
+                        </div>
+                        <div class="col-md-7">
+                            <p><%= field('userAbout') %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

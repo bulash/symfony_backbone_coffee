@@ -1,6 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <p>Url for ajax form submit: {{ path('process.form') }}</p>
-{% endblock %}
+{% block container %}
 
+    <!-- Main Content Region -->
+    <div id="content"></div>
+
+    <!-- Modal Region -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content ultra-light"></div>
+        </div>
+    </div>
+
+    <script type="text/x-template" id="user_detail_tpl">
+        {% include 'default/user/_view.html.twig' %}
+    </script>
+
+    <script type="text/x-template" id="user_edit_tpl">
+        {% include 'default/user/_edit.html.twig' %}
+    </script>
+
+    <script type="text/x-template" id="form_error_tpl">
+        {% include 'default/form/_error.html.twig' %}
+    </script>
+
+{% endblock %}

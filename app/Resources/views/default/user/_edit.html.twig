@@ -1,0 +1,28 @@
+{{ form_start(form) }}
+<div class="modal-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3 col-md-2 col-md-offset-4">
+                <h4 class="modal-title text-md-center">Edit</h4>
+            </div>
+            <div class="col-xs-7 col-md-4 text-right">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-link save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="container">
+
+        <div>
+            <div class="col-lg-8 col-lg-offset-1">
+                {% include 'default/user/_edit/form.html.twig' %}
+            </div>
+        </div>
+
+    </div>
+</div>
+{{ form_end(form) }}

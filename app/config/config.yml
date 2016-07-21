@@ -76,8 +76,13 @@ assetic:
         cssrewrite: ~
         compass:
           apply_to: "\.scss$"
+          bin: /usr/local/bin/compass
+          load_paths:
+            - "%kernel.root_dir%/../web/bundles/mopabootstrap/bootstrap-sass/assets/stylesheets/"
         coffee:
           apply_to: "\.coffee$"
+          bin: /usr/local/bin/coffee
+          node: /usr/local/bin/node
 
 fos_rest:
     view:
@@ -101,4 +106,6 @@ fos_rest:
     param_fetcher_listener: true
 
 mopa_bootstrap:
-    form: ~  # Adds twig form theme  support
+    form:
+        horizontal_label_class: ~
+        horizontal_input_wrapper_class: ~

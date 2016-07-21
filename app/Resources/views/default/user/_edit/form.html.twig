@@ -1,0 +1,51 @@
+<div class="row form-header">
+    <div class="col-xs-10">
+        <h2>Application form</h2>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-5">
+        {{ form_row(form.userName) }}
+    </div>
+    <div class="col-md-4">
+        {{ form_row(form.userBirthday) }}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        {{ form_row(form.userEmail) }}
+    </div>
+    <div class="col-md-5">
+        {{ form_row(form.siteUrl) }}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        {{ form_row(form.userPhone) }}
+    </div>
+    <div class="col-md-2">
+        {{ form_row(form.userSkill) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(form.userGender) }}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        {{ form_row(form.password.first) }}
+    </div>
+    <div class="col-md-3">
+        {{ form_row(form.password.second) }}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        {{ form_row(form.userAbout) }}
+    </div>
+</div>

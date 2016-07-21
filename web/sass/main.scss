@@ -1,0 +1,102 @@
+@import "vars";
+@import "bootstrap";
+@import "form";
+@import "radio";
+@import "responsive-align";
+
+body {
+  padding: 0 30px;
+}
+
+h1 {
+  color: $gray-darker;
+}
+
+.ultra-light {
+  font-weight: $font-weight-light;
+}
+
+.page-header {
+  border: none;
+}
+
+@media (min-width: $screen-md-min) {
+  .page-header {
+    padding: 30px 0 40px;
+    margin-bottom: 40px;
+    border-color: $gray-lighter;
+  }
+}
+
+/* Buttons */
+
+.btn:hover {
+  outline: none;
+  text-decoration: none;
+  background-color: $secondary-color;
+  color: $accent-color;
+}
+
+.btn-default {
+  @include button-variant($gray, $secondary-color, $secondary-color);
+  @include button-size(0, 15px, 16px, 35px, 17px);
+  width: 100%;
+  border: none;
+}
+
+.btn-link {
+  color: $gray;
+  font-weight: $btn-font-weight;
+  padding: 3px 18px;
+}
+
+.btn-link, .btn-link:hover {
+  border-right-color: $gray-light;
+}
+
+.btn-link:last-child {
+  border-right-color: transparent;
+}
+
+/* Panels */
+
+.panel {
+
+  border: none;
+  @include box-shadow(0 -1px 3px rgba(0,0,0,.1));
+  /* It isn't really clear from the mockup how panel height behaves */
+  min-height: 150px;
+
+  p {
+    margin-bottom: 0;
+    line-height: 24px;
+  }
+
+  h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Modal */
+
+.modal {
+  /* Modal dialog seems to be a full screen on mockups */
+  .modal-dialog {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .modal-content {
+    height: auto;
+    min-height: 100%;
+    border-radius: 0;
+  }
+
+  .btn, .btn:hover {
+    background: none;
+  }
+}
+

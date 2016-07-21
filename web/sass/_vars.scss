@@ -1,0 +1,30 @@
+/**
+ * Own vars and overriding bootstrap vars
+ */
+
+// Grid
+$grid-gutter-width: 40px;
+$grid-columns: 10;
+
+// Typography and colors
+// Sorry, could not find exact font.
+// It looks like Foundation Sans but it's not free.
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-weight-light: 300;
+$body-bg: #FAFAFA;
+$gray-base: #333;
+$headings-font-weight: 200;
+$headings-color: $gray-base;
+$btn-font-weight: $font-weight-light;
+$secondary-color: #FFF;
+$accent-color: #0285d1;
+$gray-lighter: #E0E0E0;
+$input-color: $gray-base;
+$text-color: #757575;
+
+// Transition
+$transition-time: 0.15s;
+$transition-type: ease-in-out;
+
+// other
+$border-radius-base: 0px;
