@@ -44,7 +44,7 @@ mv /usr/local/bin/composer.phar /usr/local/bin/composer
 ### Get code
 ---
 
-``` git clone git@github.com:payeverworldwide/test-task-frontend.git <target directory name> ```
+``` git clone https://github.com/bulash/symfony_backbone_coffee.git <target directory name> ```
 
 ### Configuration
 
@@ -60,3 +60,9 @@ Install vendors:
     ``` php app/console doctrine:schema:create ```
 - Load doctrine fixtures
     ``` php app/console doctrine:fixtures:load ```
+
+### Prepare assets
+- Create symlink for bootstrap package
+    ``` php app/console mopa:bootstrap:symlink:sass ```
+- Dump assets
+    ``` php app/console assetic:dump ```
