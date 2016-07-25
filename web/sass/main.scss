@@ -1,5 +1,6 @@
 @import "vars";
 @import "bootstrap";
+@import "mixins";
 @import "form";
 @import "radio";
 @import "responsive-align";
@@ -81,6 +82,11 @@ h1 {
 /* Modal */
 
 .modal {
+
+  // bootstrap seems to have a small bug with 100% width modal padding-right by
+  // adding style="padding-right:15px" to element periodically.
+  padding-right: 0 !important;
+
   /* Modal dialog seems to be a full screen on mockups */
   .modal-dialog {
     width: 100%;
@@ -98,5 +104,10 @@ h1 {
   .btn, .btn:hover {
     background: none;
   }
-}
 
+  .modal-body {
+    max-height: calc(100vh - #{$modal-header-height});
+    overflow-y: auto;
+  }
+
+}

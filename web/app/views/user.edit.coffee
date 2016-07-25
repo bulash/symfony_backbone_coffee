@@ -68,7 +68,7 @@ class App.views.UserEditView extends Marionette.ItemView
       $errorBlock.hide()
       $formGroup.append($errorBlock)
       $errorBlock.slideDown(@animationDuration)
-      $('#modal').scrollTo($formGroup, @animationDuration)
+      $('#modal').find('.modal-body').scrollTo($formGroup, @animationDuration)
 
   clearErrors: ->
     @$form.find(@formGroupSelector).removeClass(@errorFormGroupClass)

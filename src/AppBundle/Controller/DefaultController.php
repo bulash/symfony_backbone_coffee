@@ -6,6 +6,7 @@ use AppBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -24,6 +25,24 @@ class DefaultController extends Controller
             'form' => $handler->getBuiltFormView(),
             'user' => $this->user,
         ));
+    }
+
+    /**
+     * Provides user json data
+     *
+     * @Route("/user", name="user")
+     */
+    public function userAction()
+    {
+        $this->initUser();
+        $serializer = $this->container->get('serializer');
+        $userDataJson = $serializer->serialize($this->user, 'json');
+        $userDataArray = json_decode($userDataJson);
+        $responseArray = array('user' => $userDataArray);
+        $response = new Response();
+        $response->headers->set('Content-Type', 'application/json');
+        $response->setContent(json_encode($responseArray));
+        return $response;
     }
 
     /**

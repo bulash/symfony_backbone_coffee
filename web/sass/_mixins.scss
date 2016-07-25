@@ -1,5 +1,3 @@
-@import "vars";
-
 // Transitions
 @mixin opacity-transition() {
   @include transition(opacity $transition-type $transition-time);

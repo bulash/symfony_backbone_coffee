@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -68,7 +67,7 @@ class UserType extends AbstractType
                 'expanded' => true,
                 'multiple' => false
             ))
-            ->add('userPhone', TextType::class, array(
+            ->add('userPhone', TelType::class, array(
                 'label' => 'Phone number',
                 'required' => false,
                 'attr' => array(
